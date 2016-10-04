@@ -1,0 +1,20 @@
+﻿ version: '2'
+
+ services:
+    corepoc:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "8080:5000"
+    elasticsearch:
+        image: elasticsearch
+        ports: 
+            - "9200:9200"
+        environment:
+            - Des.cluster.name=esdemo
+            - Des.node.name=node01
+        volumes:
+            - esdata:/usr/share/elasticsearch/data
+ volumes:
+    esdata:
