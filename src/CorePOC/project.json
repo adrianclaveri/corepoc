@@ -16,7 +16,10 @@
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "AutoMapper": "4.2.1",
-    "NEST": "2.4.6"
+    "NEST": "2.4.6",
+    "Elasticsearch.NetCore.Aws": {
+      "target": "project"
+    }
   },
 
   "tools": {

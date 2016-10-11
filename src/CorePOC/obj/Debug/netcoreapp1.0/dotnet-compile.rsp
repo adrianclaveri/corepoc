@@ -89,7 +89,7 @@
 --reference:C:\Users\aclaveri\.nuget\packages\Microsoft.Win32.Primitives\4.0.1\ref\netstandard1.3\Microsoft.Win32.Primitives.dll
 --reference:C:\Users\aclaveri\.nuget\packages\Microsoft.Win32.Registry\4.0.0\ref\netstandard1.3\Microsoft.Win32.Registry.dll
 --reference:C:\Users\aclaveri\.nuget\packages\NEST\2.4.6\lib\netstandard1.3\Nest.dll
---reference:C:\Users\aclaveri\.nuget\packages\Newtonsoft.Json\9.0.1\lib\netstandard1.0\Newtonsoft.Json.dll
+--reference:C:\Users\aclaveri\.nuget\packages\Newtonsoft.Json\9.0.2-beta1\lib\netstandard1.1\Newtonsoft.Json.dll
 --reference:C:\Users\aclaveri\.nuget\packages\System.AppContext\4.1.0\ref\netstandard1.6\System.AppContext.dll
 --reference:C:\Users\aclaveri\.nuget\packages\System.Buffers\4.0.0\lib\netstandard1.1\System.Buffers.dll
 --reference:C:\Users\aclaveri\.nuget\packages\System.Collections\4.0.11\ref\netstandard1.3\System.Collections.dll
@@ -174,6 +174,7 @@
 --reference:C:\Users\aclaveri\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\aclaveri\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\aclaveri\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
+--reference:C:\Development\CorePOC\src\Elasticsearch.NetCore.Aws\bin\Debug\netstandard1.6\Elasticsearch.NetCore.Aws.dll
 --resource:"C:\Development\CorePOC\src\CorePOC\obj\Debug\netcoreapp1.0\CorePOCdotnet-compile.deps.json",CorePOC.deps.json
 C:\Development\CorePOC\src\CorePOC\Program.cs
 C:\Development\CorePOC\src\CorePOC\Startup.cs

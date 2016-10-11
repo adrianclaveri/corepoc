@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Elasticsearch.Net;
+using Elasticsearch.NetCore.Aws;
+using Microsoft.Extensions.Configuration;
 using Nest;
 using System;
 using System.Collections.Generic;
@@ -21,9 +23,17 @@ namespace CorePOC.Models
         {
             try
             {
+                var httpConnection = new AwsHttpConnection(new AwsSettings
+                {
+                    AccessKey = "AKIAI63FYLJHOUAV7HQA",
+                    SecretKey = "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",
+                    Region = "us-east-1",
+                });
+
                 var indexName = _config["ConnectionStrings:IndexName"];
-                Uri node = new Uri(_config["ConnectionStrings:ElasticDockerURL"]);
-                ConnectionSettings settings = new ConnectionSettings(node).DefaultIndex(indexName);
+                var node = new Uri("https://search-bunee-test-hxpcuz56nhqazfwlwz75wtexh4.us-east-1.es.amazonaws.com");
+                var pool = new SingleNodeConnectionPool(node);
+                var settings = new ConnectionSettings(pool, httpConnection).DefaultIndex(indexName);
                 ElasticClient client = new ElasticClient(settings);
 
                 var result = client.TypeExists(indexName, typeof(Persona));
@@ -39,9 +49,11 @@ namespace CorePOC.Models
                     await client.CreateIndexAsync(indexName, f => f.InitializeUsing(indexState));
                 }
             }
-            catch {
+            catch
+            {
                 Console.WriteLine("Error al conectar a BD");
             }
+
         }
     }
 }

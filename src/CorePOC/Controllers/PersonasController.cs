@@ -30,10 +30,12 @@ namespace CorePOC.Controllers
                 var result = _personaRepository.GetAll();
 
                 return Ok(Mapper.Map<ICollection<PersonaViewModel>>(result)); //Maps a collection of ViewModel to Model
+
+                //return Ok("It's working from private dockerhub!");
             }
-            catch
+            catch(Exception ex)
             {
-                return BadRequest("Error al traer personas");
+                return BadRequest("Error al traer personas "+ex);
             }
         }
 

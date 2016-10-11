@@ -41,6 +41,7 @@ namespace CorePOC
             services.AddScoped<IPersonaRepository, PersonaRepository>();
             services.AddSingleton(Configuration);
             services.AddTransient<CorePOCSeedData>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

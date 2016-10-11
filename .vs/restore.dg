@@ -1,2 +1,6 @@
+#:C:\Development\CorePOC\src\Elasticsearch.NetCore.Aws\Elasticsearch.NetCore.Aws.xproj
+#:C:\Development\CorePOC\src\CorePOC\CorePOC.xproj
+C:\Development\CorePOC\src\CorePOC\CorePOC.xproj|C:\Development\CorePOC\src\Elasticsearch.NetCore.Aws\Elasticsearch.NetCore.Aws.xproj
 #:C:\Development\CorePOC\CorePOC.Tests\CorePOC.Tests.xproj
 C:\Development\CorePOC\CorePOC.Tests\CorePOC.Tests.xproj|C:\Development\CorePOC\src\CorePOC\CorePOC.xproj
+C:\Development\CorePOC\src\CorePOC\CorePOC.xproj|C:\Development\CorePOC\src\Elasticsearch.NetCore.Aws\Elasticsearch.NetCore.Aws.xproj

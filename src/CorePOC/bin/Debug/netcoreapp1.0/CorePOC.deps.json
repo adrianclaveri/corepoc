@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "b35f0224ae4fdf134f1db8927146003884306d0b"
+    "signature": "873c85858963e901c89c45afa539fc8b9c9fb9ff"
   },
   "compilationOptions": {
     "defines": [
@@ -29,7 +29,8 @@
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
           "AutoMapper": "4.2.1",
-          "NEST": "2.4.6"
+          "NEST": "2.4.6",
+          "Elasticsearch.NetCore.Aws": "1.0.0"
         },
         "runtime": {
           "CorePOC.dll": {}
@@ -345,7 +346,7 @@
       "Microsoft.AspNetCore.JsonPatch/1.0.0": {
         "dependencies": {
           "Microsoft.CSharp": "4.0.1",
-          "Newtonsoft.Json": "9.0.1",
+          "Newtonsoft.Json": "9.0.2-beta1",
           "System.Collections.Concurrent": "4.0.12",
           "System.ComponentModel.TypeConverter": "4.1.0",
           "System.Diagnostics.Debug": "4.0.11",
@@ -554,7 +555,7 @@
           "Microsoft.AspNetCore.Mvc.DataAnnotations": "1.0.1",
           "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.1",
           "Microsoft.Extensions.WebEncoders": "1.0.0",
-          "Newtonsoft.Json": "9.0.1",
+          "Newtonsoft.Json": "9.0.2-beta1",
           "System.Buffers": "4.0.0",
           "System.Runtime.Serialization.Primitives": "4.1.1"
         },
@@ -813,7 +814,7 @@
         "dependencies": {
           "Microsoft.Extensions.Configuration": "1.0.0",
           "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0",
-          "Newtonsoft.Json": "9.0.1",
+          "Newtonsoft.Json": "9.0.2-beta1",
           "System.Dynamic.Runtime": "4.0.11",
           "System.IO.FileSystem": "4.0.1",
           "System.Runtime.Serialization.Primitives": "4.1.1"
@@ -861,7 +862,7 @@
       "Microsoft.Extensions.DependencyModel/1.0.0": {
         "dependencies": {
           "Microsoft.DotNet.InternalAbstractions": "1.0.0",
-          "Newtonsoft.Json": "9.0.1",
+          "Newtonsoft.Json": "9.0.2-beta1",
           "System.Diagnostics.Debug": "4.0.11",
           "System.Dynamic.Runtime": "4.0.11",
           "System.Linq": "4.1.0"
@@ -1142,7 +1143,7 @@
         "dependencies": {
           "Elasticsearch.Net": "2.4.6",
           "NETStandard.Library": "1.6.0",
-          "Newtonsoft.Json": "9.0.1",
+          "Newtonsoft.Json": "9.0.2-beta1",
           "System.Collections.Specialized": "4.0.1",
           "System.Linq.Queryable": "4.0.1",
           "System.Reflection.TypeExtensions": "4.1.0"
@@ -1154,7 +1155,7 @@
           "lib/netstandard1.3/Nest.dll": {}
         }
       },
-      "Newtonsoft.Json/9.0.1": {
+      "Newtonsoft.Json/9.0.2-beta1": {
         "dependencies": {
           "Microsoft.CSharp": "4.0.1",
           "System.Collections": "4.0.11",
@@ -1170,6 +1171,7 @@
           "System.Resources.ResourceManager": "4.0.1",
           "System.Runtime": "4.1.0",
           "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Numerics": "4.0.1",
           "System.Runtime.Serialization.Primitives": "4.1.1",
           "System.Text.Encoding": "4.0.11",
           "System.Text.Encoding.Extensions": "4.0.11",
@@ -1180,10 +1182,10 @@
           "System.Xml.XDocument": "4.0.11"
         },
         "runtime": {
-          "lib/netstandard1.0/Newtonsoft.Json.dll": {}
+          "lib/netstandard1.1/Newtonsoft.Json.dll": {}
         },
         "compile": {
-          "lib/netstandard1.0/Newtonsoft.Json.dll": {}
+          "lib/netstandard1.1/Newtonsoft.Json.dll": {}
         }
       },
       "System.Collections.NonGeneric/4.0.1": {
@@ -1309,6 +1311,23 @@
         },
         "compile": {
           "lib/netstandard1.0/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "Elasticsearch.NetCore.Aws/1.0.0": {
+        "dependencies": {
+          "Elasticsearch.Net": "2.4.6",
+          "Microsoft.AspNetCore.Http.Abstractions": "1.0.0",
+          "Microsoft.AspNetCore.Http.Extensions": "1.0.0",
+          "Microsoft.AspNetCore.WebUtilities": "1.0.0",
+          "NETStandard.Library": "1.6.0",
+          "Newtonsoft.Json": "9.0.2-beta1",
+          "System.Net.Requests": "4.0.11"
+        },
+        "runtime": {
+          "Elasticsearch.NetCore.Aws.dll": {}
+        },
+        "compile": {
+          "Elasticsearch.NetCore.Aws.dll": {}
         }
       },
       "Libuv/1.9.0": {
@@ -3298,10 +3317,10 @@
       "serviceable": true,
       "sha512": "sha512-UBeEY1Us40gvCCPdEdWyIghdN94WMc5d/w/8WsIoS0d89qXW3WJkf1ACxW+o8DjkzMfVj4WD6PCKeNWaAaS6rA=="
     },
-    "Newtonsoft.Json/9.0.1": {
+    "Newtonsoft.Json/9.0.2-beta1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw=="
+      "sha512": "sha512-bq5DjCtCJpy9R5rsEeQlKz8qGF1Bh3wGaJKMlRwmCoKZ8WUCIFtU3JlyMOdAkSn66KCehCCAxMZFOQD4nNnH/w=="
     },
     "System.Collections.NonGeneric/4.0.1": {
       "type": "package",
@@ -3342,6 +3361,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-TWZnuiJgPDAEEUfobD7njXvSVR2Toz+jvKWds6yL4oSztmKQfnWzucczjzA+6Dv1bktBdY71sZW1YN0X6m9chQ=="
+    },
+    "Elasticsearch.NetCore.Aws/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Libuv/1.9.0": {
       "type": "package",

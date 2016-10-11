@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using CorePOC.Models;
 using Microsoft.Extensions.Configuration;
 using Nest;
+using Elasticsearch.NetCore.Aws;
+using Elasticsearch.Net;
 
 namespace CorePOC.Repositories
 {
@@ -13,15 +15,23 @@ namespace CorePOC.Repositories
     {
         //private List<Persona> _db = new List<Persona>();
         public IConfigurationRoot _config { get; set; }
-        public Uri node { get; set; }
-        public ConnectionSettings settings { get; set; }
         public ElasticClient client { get; set; }
 
         public PersonaRepository(IConfigurationRoot config)
         {
             _config = config;
-            node = new Uri(_config["ConnectionStrings:ElasticDockerURL"]);
-            settings = new ConnectionSettings(node).DefaultIndex(_config["ConnectionStrings:IndexName"]);
+
+            var httpConnection = new AwsHttpConnection(new AwsSettings
+            {
+                AccessKey = "AKIAI63FYLJHOUAV7HQA",
+                SecretKey = "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",
+                Region = "us-east-1",
+            });
+
+            var indexName = _config["ConnectionStrings:IndexName"];
+            var node = new Uri("https://search-bunee-test-hxpcuz56nhqazfwlwz75wtexh4.us-east-1.es.amazonaws.com");
+            var pool = new SingleNodeConnectionPool(node);
+            var settings = new ConnectionSettings(pool, httpConnection).DefaultIndex(indexName);
             client = new ElasticClient(settings);
         }
 
@@ -42,7 +52,7 @@ namespace CorePOC.Repositories
             .Fields(f => f
                 .Fields(f1 => f1.Nombre, f2 => f2.Apellido, f3 => f3.Edad)))));
 
-            var results = hits.Documents.ToList();
+           var results = hits.Documents.ToList();
 
             return results;
         }
